@@ -1,0 +1,20 @@
+span {
+  background: red;
+  display: inline-block;
+  padding: 10px;
+  color: #fff;
+  margin: 10px 0;
+}
+.availableClass {
+  & span{
+    background: green;
+  }
+}
+.nearbyClass {
+  & span{
+    &:afer{
+      content:'nearby';
+      margin-left: 10px;
+    }
+  }
+}

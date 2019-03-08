@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="vue-app">
+    <h1>Dynamic Css</h1>
+    <h2>Example 1</h2>
+    <div v-bind:class='{red: true, blue: false}'></div> <!-- if true, add class red -->
+    <div v-on:click="available = !available" v-bind:class='{availableClass:available}'><span>JoJo</span></div>
+    <h2>Example 2</h2>
+    <button v-on:click="nearby = !nearby">Toggle nearbyClass</button>
+    <button v-on:click="available = !available">Toggle availableClass</button>
+    <div v-bind:class="compClasses"><span>prueba</span></div>
+
+  </div>
+
+
+
+  <script src="./app.js" charset="utf-8"></script>
+
+</body>
+</html>

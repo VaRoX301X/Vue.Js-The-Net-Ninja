@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="vue-app">
+    <h1>Computed Properties</h1>
+    <h4>Every time a value changes, vue reruns all functions(that use one of the variables used), thats why we use computed properties</h4>
+    <button v-on:click="a++">Add to A</button>
+    <button v-on:click="b++">Add to B</button>
+    <p>A - {{ a }}</p>
+    <p>B - {{ b }}</p>
+    <p>Age + A = {{ addToA }}</p> <!-- to make it find the computed methods, just erase the () -->
+    <p>Age + B = {{ addToB }}</p>
+  </div>
+
+
+
+  <script src="./app.js" charset="utf-8"></script>
+
+</body>
+</html>

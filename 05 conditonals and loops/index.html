@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="vue-app">
+    <h1>conditionals</h1>
+    <button v-on:click="error = !error">Toggle <b>Error</b> Error</button>
+    <button v-on:click="success = !success">Toggle Success</button>
+    <p>{{error}} - {{success}}</p>
+    <p v-if="error">v-if ERROR</p>
+    <p v-else-if="success">v-else-if SUCCESS</p>
+    <p v-show="error">v-show ERROR (display: none)</p>
+    <p v-show="success">v-show SUCCESS (display: none)</p>
+    <hr>
+    <h1>Loops</h1>
+    <h3>Through lists</h3>
+    <h4>Characters</h4>
+    <ul>
+      <li v-for="char in characters">{{char}}</li>
+    </ul>
+    <h4>Ninjas</h4>
+    <ul>
+      <li v-for="ninja in ninjas">
+        <b>Name: </b>{{ninja.name}}, <b>Age: </b>{{ninja.age}}
+      </li>
+    </ul>
+    <h4>output indexes</h4>
+    <ul>
+      <li v-for="(character, index) in characters">{{index}}. {{character}}</li>
+    </ul>
+    <ul>
+      <li v-for="(ninja, index) in ninjas"><b>{{index}}. Name: </b>{{ninja.name}}, <b>Age: </b>{{ninja.age}}</li>
+    </ul>
+    <h4>Use templates (Do not generate extra html)</h4>
+    <template v-for="ninja in ninjas">
+      <h5>{{ninja.name}}</h5>
+      <h6>{{ninja.age}}</h6>
+    </template>
+    <template v-for="ninja in ninjas">
+      <div v-for="(val,key) in ninja">
+        <p>{{key}} - {{val}}</p>
+      </div>
+    </template>
+  </div>
+  
+
+
+  <script src="./app.js" charset="utf-8"></script>
+
+</body>
+</html>
