@@ -1,8 +1,9 @@
 <template>
-    <div id="show-blogs">
+
+    <div v-theme:column="'wide'" id="show-blogs">
       <h1>All Blg Articles</h1>
       <div v-for="blog in blogs" class="single-blog">
-        <h2>{{ blog.title }}</h2>
+        <h2 v-rainbow>{{ blog.title }}</h2>
         <article>{{ blog.body }}</article>
         
 
@@ -17,6 +18,9 @@
           return {
             blogs: []
           }
+      },
+      methods: {
+
       },
       created() {
           this.$http.get('https://jsonplaceholder.typicode.com/posts').then(function(data){
