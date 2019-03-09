@@ -13,6 +13,7 @@
 </template>
 
 <script>
+  import searchMixin from '../mixins/searchMixin';
     export default {
         name: "showBlogs",
       data(){
@@ -31,11 +32,7 @@
           })
       },
       computed: {
-          filteredBlogs: function() {
-            return this.blogs.filter((blog) => {
-              return blog.title.match(this.search);
-            });
-          }
+
       },
       filters: {
         // Registrar filtro de manera local
@@ -48,7 +45,8 @@
       },
       directives: {
           // igual que globalmente
-      }
+      },
+      mixins: [searchMixin]
     }
 
 </script>
