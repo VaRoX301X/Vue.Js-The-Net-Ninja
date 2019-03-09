@@ -9,7 +9,9 @@ Vue.use(VueRouter);
 
 //Add routing
 const router = new VueRouter({
-  routes: Routes
+  routes: Routes,
+  mode: 'history'
+  // mode: 'hash'
 });
 
 // Custom directives
