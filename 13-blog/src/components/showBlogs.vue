@@ -36,6 +36,18 @@
               return blog.title.match(this.search);
             });
           }
+      },
+      filters: {
+        // Registrar filtro de manera local
+        'to-uppercase': function (value) {
+          return value.toUpperCase();
+        },
+        toLowercase(value){
+          return value.toLowerCase();
+        }
+      },
+      directives: {
+          // igual que globalmente
       }
     }
 

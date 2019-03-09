@@ -23,9 +23,6 @@ Vue.directive('theme', {
 });
 
 // Filters
-Vue.filter('to-uppercase', function(value){
-  return value.toUpperCase();
-});
 Vue.filter('shortener', function (value) {
   return (value.slice(0,100)+ '...')
 });
