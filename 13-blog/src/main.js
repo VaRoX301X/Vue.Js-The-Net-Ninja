@@ -20,7 +20,15 @@ Vue.directive('theme', {
       el.style.padding = '20px';
     }
   }
-})
+});
+
+// Filters
+Vue.filter('to-uppercase', function(value){
+  return value.toUpperCase();
+});
+Vue.filter('shortener', function (value) {
+  return (value.slice(0,100)+ '...')
+});
 
 new Vue({
   el: '#app',
