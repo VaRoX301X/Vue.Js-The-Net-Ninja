@@ -5,7 +5,7 @@
       <input type="text" v-model="search" placeholder="search blogs">
       <div v-for="blog in filteredBlogs" class="single-blog">
         <router-link v-bind:to="'/blog/' + blog.id"><h2 v-rainbow>{{ blog.title | to-uppercase}}</h2></router-link>
-        <article>{{ blog.body | shortener }}</article>
+        <article>{{ blog.content | shortener }}</article>
       </div>
     </div>
 </template>
@@ -24,9 +24,16 @@
 
       },
       created() {
-          this.$http.get('https://jsonplaceholder.typicode.com/posts').then(function(data){
-            console.log(data);
-            this.blogs = data.body.slice(0,10);
+          this.$http.get('https://thenetninjavuejs-422a5.firebaseio.com/posts.json').then(function(data){
+            return data.json();
+          }).then(function(data){
+            var blogsArray = [];
+            for (let key in data){
+              data[key].id = key; // añade a cada objeto el id unico que es el nombre del objeto
+              blogsArray.push(data[key]);
+            }
+            console.log(blogsArray);
+            this.blogs = blogsArray; // Se añaden despues del for para tenerlos todos
           })
       },
       computed: {
