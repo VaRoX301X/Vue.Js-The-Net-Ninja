@@ -3,3 +3,5 @@ idea/
 .idea
 
 11-component-nesting-props-events-lifecyclehook/package-lock.json
+14-udemyVuejs/01-router/.editorconfig
+14-udemyVuejs/01-router/.babelrc
