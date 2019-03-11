@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import Home from "./components/Home";
+  import Index from "./components/Index";
   import Navbar from "./components/Navbar";
 
   export default {
@@ -17,7 +17,7 @@
       }
     },
     components: {
-      'home': Home,
+      'index': Index,
       'navbar': Navbar
     }
   }

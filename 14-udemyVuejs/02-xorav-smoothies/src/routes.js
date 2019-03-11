@@ -1,6 +1,6 @@
-import Home from "./components/Home";
+import Index from "./components/Index";
 
 export default [
-  { path: '*', name:'*' , component: Home},
-  { path: '/', name:'Home' , component: Home}
+  { path: '*', name:'*' , component: Index},
+  { path: '/', name:'Index' , component: Index}
 ]
