@@ -9,6 +9,7 @@
 import Home from "./components/Home";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
+import ViewProfile from "./components/ViewProfile";
 
 export default {
   name: 'app',
@@ -20,7 +21,8 @@ export default {
   components: {
     'home': Home,
     'about': About,
-    'navbar': Navbar
+    'navbar': Navbar,
+    'view-profile': ViewProfile
   }
 }
 </script>
