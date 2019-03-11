@@ -1,6 +1,7 @@
 <template>
     <div id="About">
-      <h1>About</h1>
+      <h1>ABOUT</h1>
+      <img src="../assets/logo.png" alt="">
     </div>
 </template>
 
