@@ -93,7 +93,7 @@
     font-size: 2rem;
     margin: 1.5rem auto;
   }
-  
+
   .relativo {
     margin: 1.5rem auto;
     position: relative;
