@@ -2,6 +2,7 @@
     <div class="index container">
       <div class="card" v-for="smoothie in smoothies" :key="smoothie.id">
         <div class="card-content">
+          <i class="material-icons delete" v-on:click="deleteSmoothie(smoothie.id)">delete</i>
           <h2 class="indigo-text">
             {{ smoothie.title }}
           </h2>
@@ -43,6 +44,13 @@
               }
             ]
           }
+      },
+      methods: {
+          deleteSmoothie: function (id) {
+            this.smoothies = this.smoothies.filter(smoothie => {
+              return smoothie.id != id;
+            })
+          }
       }
     }
 </script>
@@ -64,5 +72,13 @@
   }
   .index .ingredients li {
     display: inline-block;
+  }
+  .index .delete {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 1.4rem;
   }
 </style>
