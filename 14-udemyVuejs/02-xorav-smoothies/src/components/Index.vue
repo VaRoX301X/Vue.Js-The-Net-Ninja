@@ -26,14 +26,22 @@
            }
       },
       methods: {
+          // --------------------------------- DELETE FROM DATABASE ------------------------
           deleteSmoothie: function (id) {
-            this.smoothies = this.smoothies.filter(smoothie => {
-              return smoothie.id != id;
-            })
+            console.log(id);
+            db.collection('smoothies').doc(id).delete()
+              .then(() => {
+                // update on front-end
+                this.smoothies = this.smoothies.filter(smoothie => {
+                  return smoothie.id !== id;
+                })
+              })
+
           }
       },
       created() {
           //fetch data from firestore
+        // -------------------------------- FETCH DATABASE -------------------------------
         db.collection('smoothies').get()
           .then(snapshot => {
             snapshot.forEach(doc => {
