@@ -8,6 +8,7 @@
 <script>
   import Index from "./components/Index";
   import Navbar from "./components/Navbar";
+  import addSmoothie from "./components/addSmoothie";
 
   export default {
     name: 'app',
@@ -18,7 +19,8 @@
     },
     components: {
       'index': Index,
-      'navbar': Navbar
+      'navbar': Navbar,
+      'add-smoothie': addSmoothie
     }
   }
 </script>
