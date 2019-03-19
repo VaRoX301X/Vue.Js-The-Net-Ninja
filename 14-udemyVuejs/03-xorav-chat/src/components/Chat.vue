@@ -22,6 +22,7 @@
 <script>
   import newMessage from './newMessage';
   import db from '@/firebase/init';
+  import moment from 'moment';
     export default {
         name: "Chat",
       props: ['name'],
@@ -41,13 +42,13 @@
 
         ref.onSnapshot(snapshot => {
           snapshot.docChanges().forEach(change => {
-            if (change.type == 'added'){
+            if (change.type === 'added'){
               let doc = change.doc;
               this.messages.push({
                 id : doc.id,
                 name: doc.data().name,
                 content: doc.data().content,
-                timestamp: doc.data().timestamp
+                timestamp: moment(doc.data().timestamp).format('lll')
               })
             }
           })
