@@ -6,6 +6,7 @@ import Chat from "../components/Chat";
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {path: '/', name: 'Welcome', component: Welcome},
     { // IR A CHAT SI Y SOLO SI SE ESCRIBE NOMBRE - ROUTE GUARDING
