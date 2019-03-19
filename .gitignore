@@ -18,3 +18,4 @@ idea/
 14-udemyVuejs/03-xorav-chat/firebase.json
 14-udemyVuejs/03-xorav-chat/firestore.indexes.json
 14-udemyVuejs/03-xorav-chat/firestore.rules
+*.js
